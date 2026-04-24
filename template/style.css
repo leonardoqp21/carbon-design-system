@@ -1,0 +1,163 @@
+/* ---------- Wrapper ---------- */
+.sticky-header-datatable-container {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+  }
+  
+  .cds--data-table-content {
+    overflow-x: auto;
+    width: 100%;
+  }
+  
+  /* ---------- Table ---------- */
+  table.cds--data-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #ffffff;
+    color: #161616;                 /* $text-primary */
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Size modifier: md */
+  table.cds--data-table--md thead th {
+    height: 40px;
+  }
+  table.cds--data-table--md tbody td {
+    height: 47px;
+    padding: 7px 16px 6px;
+  }
+  
+  /* ---------- Header ---------- */
+  table.cds--data-table thead {
+    background-color: #e0e0e0;      /* $layer-accent-01 */
+    color: #161616;
+    font-size: 0.875rem;            /* $heading-compact-01 */
+    font-weight: 600;
+    letter-spacing: 0.16px;
+    line-height: 1.28572;
+  }
+  
+  table.cds--data-table thead th {
+    padding: 0 16px;                /* $spacing-05 */
+    text-align: start;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: #e0e0e0;
+    border: 0;
+  }
+  
+  .cds--table-header-label {
+    display: block;
+    padding: 7px 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.16px;
+    line-height: 1.28572;
+    color: #161616;
+    white-space: nowrap;
+  }
+  
+  /* ---------- Body rows ---------- */
+  table.cds--data-table tbody tr {
+    background-color: transparent;
+    transition: background-color 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  }
+  
+  table.cds--data-table tbody tr:hover {
+    background-color: #e8e8e8;      /* $layer-hover-01 */
+    cursor: pointer;
+  }
+  
+  table.cds--data-table tbody tr.cds--data-table--selected {
+    background-color: #d1d1d1;      /* $layer-selected-01 */
+    border-left: 3px solid #0f62fe; /* $focus */
+  }
+  
+  /* ---------- Body cells ---------- */
+  table.cds--data-table tbody td {
+    padding: 7px 16px 6px;
+    font-size: 0.875rem;            /* $body-compact-01 */
+    line-height: 1.28572;
+    letter-spacing: 0.16px;
+    color: #525252;                 /* $text-secondary */
+    vertical-align: middle;
+    border-top: 1px solid #f4f4f4;  /* $border-subtle-00 */
+    border-bottom: 1px solid #c6c6c6; /* $border-subtle-01 */
+  }
+  
+  /* Link-style name cell */
+  table.cds--data-table tbody td a.resource-link {
+    color: #0f62fe;                 /* $link-primary */
+    text-decoration: none;
+  }
+  table.cds--data-table tbody td a.resource-link:hover {
+    color: #0043ce;                 /* $link-primary-hover */
+    text-decoration: underline;
+  }
+  
+  /* ---------- Checkbox column ---------- */
+  .cds--table-column-checkbox {
+    width: 2.5rem;
+    padding: 0 0 0 1rem;
+    vertical-align: middle;
+  }
+  .cds--visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* ---------- Overflow menu column ---------- */
+  .cds--table-column-menu {
+    width: 2.5rem;
+    padding: 0 !important;
+    text-align: right;
+  }
+  
+  table.cds--data-table--visible-overflow-menu .cds--overflow-menu {
+    opacity: 1;                     /* always visible (not only on hover) */
+  }
+  
+  .cds--overflow-menu.cds--btn--ghost.cds--btn--icon-only {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    color: #161616;
+    cursor: pointer;
+    border-radius: 0;
+  }
+  .cds--overflow-menu:hover {
+    background-color: #e8e8e8;
+  }
+  .cds--overflow-menu:focus {
+    outline: 2px solid #0f62fe;
+    outline-offset: -2px;
+  }
+  
+  /* ---------- Icon sizing utilities (Stacksync) ---------- */
+  .min-w-\[24px\] { min-width: 24px; }
+  .min-w-\[180px\] { min-width: 180px; }
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .break-all { word-break: break-all; }
+  
+  /* ---------- Utility (from parent app, Tailwind-style) ---------- */
+  .flex { display: flex; }
+  .items-center { align-items: center; }
+  .gap-1 { gap: 0.25rem; }
+  .gap-2 { gap: 0.5rem; }

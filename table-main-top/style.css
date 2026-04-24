@@ -1,0 +1,98 @@
+/* ---------- Container ---------- */
+.resource-select.cds--content-switcher {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 2.25rem;                 /* ~36px, size md */
+    border-radius: 4px;
+    outline: 1px solid #161616;      /* $border-inverse / $text-primary */
+    outline-offset: -1px;
+    background-color: transparent;
+    overflow-x: auto;
+    box-sizing: border-box;
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  }
+  
+  /* ---------- Button (base / unselected) ---------- */
+  .resource-select .cds--content-switcher-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+    height: 100%;
+    padding: 8px 16px;               /* $spacing-03 / $spacing-05 */
+    background-color: transparent;
+    color: #525252;                  /* $text-secondary */
+    border-top: 1px solid #161616;
+    border-bottom: 1px solid #161616;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    font-size: 0.875rem;
+    line-height: 1.28572;
+    letter-spacing: 0.16px;
+    font-weight: 400;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  }
+  
+  /* ---------- Button (selected) ---------- */
+  .resource-select .cds--content-switcher-btn.cds--content-switcher--selected {
+    background-color: #161616;       /* $layer-selected-inverse */
+    color: #ffffff;                  /* $text-inverse */
+    border-style: none;
+    box-shadow: inset 1px 0 0 0 #161616;
+  }
+  
+  /* First / last selected rounded corners */
+  .resource-select .cds--content-switcher-btn:first-child.cds--content-switcher--selected {
+    border-radius: 4px 0 0 4px;
+  }
+  .resource-select .cds--content-switcher-btn:last-child.cds--content-switcher--selected {
+    border-radius: 0 4px 4px 0;
+  }
+  
+  /* ---------- Hover ---------- */
+  .resource-select .cds--content-switcher-btn:hover:not(.cds--content-switcher--selected) {
+    background-color: #e8e8e8;       /* $layer-hover */
+    color: #161616;
+    cursor: pointer;
+  }
+  
+  /* ---------- Focus ---------- */
+  .resource-select .cds--content-switcher-btn:focus {
+    outline: 2px solid #0f62fe;      /* $focus */
+    outline-offset: -2px;
+  }
+  
+  /* ---------- Disabled ---------- */
+  .resource-select .cds--content-switcher-btn:disabled,
+  .resource-select .cds--content-switcher-btn[aria-disabled="true"] {
+    color: #c6c6c6;                  /* $text-disabled */
+    border-color: #c6c6c6;
+    cursor: not-allowed;
+  }
+  
+  /* ---------- Label ---------- */
+  .resource-select .cds--content-switcher__label {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.875rem;
+    line-height: 1.28572;
+    letter-spacing: 0.16px;
+    color: inherit;
+  }
+  
+  /* ---------- Scroll utility ---------- */
+  .overflow-x-auto {
+    overflow-x: auto;
+  }

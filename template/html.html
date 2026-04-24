@@ -1,0 +1,154 @@
+<div class="sticky-header-datatable-container">
+    <div>
+      <div class="cds--data-table-content">
+        <table class="cds--data-table cds--data-table--md cds--data-table--visible-overflow-menu">
+          <thead>
+            <tr>
+              <th aria-live="off" scope="col" class="cds--table-column-checkbox">
+                <div class="cds--checkbox--inline">
+                  <input
+                    class="cds--checkbox"
+                    id="resource-table-select-all"
+                    type="checkbox"
+                    name="resource-table-select-all"
+                  />
+                  <label for="resource-table-select-all" class="cds--checkbox-label">
+                    <span class="cds--visually-hidden">Select all rows</span>
+                  </label>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="cds--table-header-label">
+                  Name
+                  <div class="cds--table-header-label--decorator-inner"></div>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="cds--table-header-label">
+                  Apps
+                  <div class="cds--table-header-label--decorator-inner"></div>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="cds--table-header-label">
+                  Type
+                  <div class="cds--table-header-label--decorator-inner"></div>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="cds--table-header-label">
+                  Status
+                  <div class="cds--table-header-label--decorator-inner"></div>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="cds--table-header-label">
+                  Created Time
+                  <div class="cds--table-header-label--decorator-inner"></div>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="cds--table-header-label">
+                  Last Modified Time
+                  <div class="cds--table-header-label--decorator-inner"></div>
+                </div>
+              </th>
+              <th scope="col"><!-- empty header cell for the overflow menu column --></th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr>
+              <!-- Row selection -->
+              <td class="cds--table-column-checkbox">
+                <div class="cds--checkbox--inline">
+                  <input
+                    class="cds--checkbox"
+                    id="{{row_id}}-select"
+                    type="checkbox"
+                    name="{{row_id}}-select"
+                  />
+                  <label for="{{row_id}}-select" class="cds--checkbox-label">
+                    <span class="cds--visually-hidden">Select row</span>
+                  </label>
+                </div>
+              </td>
+  
+              <!-- Name column: icon + linked name -->
+              <td>
+                <div class="flex items-center gap-2 group">
+                  <svg
+                    focusable="false"
+                    preserveAspectRatio="xMidYMid meet"
+                    fill="currentColor"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
+                    class="min-w-[24px]"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <!-- Resource-type icon path (Workflow / Sync / Connection / …) -->
+                  </svg>
+                  <a href="{{resource_url}}" class="resource-link">{{resource_name}}</a>
+                </div>
+              </td>
+  
+              <!-- Apps column: stacked app logos -->
+              <td>
+                <div class="flex items-center gap-1">
+                  <img src="{{app_icon_1}}" alt="{{app_name_1}}" width="20" height="20" />
+                  <img src="{{app_icon_2}}" alt="{{app_name_2}}" width="20" height="20" />
+                </div>
+              </td>
+  
+              <!-- Type column: plain text -->
+              <td>{{resource_type}}</td>
+  
+              <!-- Status column: Carbon Toggle -->
+              <td>
+                <!-- cds--toggle component goes here -->
+              </td>
+  
+              <!-- Timestamp columns -->
+              <td>
+                <span class="min-w-[180px] line-clamp-1 break-all">{{created_time}}</span>
+              </td>
+              <td>
+                <span class="min-w-[180px] line-clamp-1 break-all">{{last_modified_time}}</span>
+              </td>
+  
+              <!-- Overflow menu column -->
+              <td class="cds--table-column-menu">
+                <div class="cds--overflow-menu__container cds--autoalign">
+                  <button
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-label="Options"
+                    class="cds--overflow-menu cds--btn cds--btn--ghost cds--btn--icon-only"
+                    type="button"
+                  >
+                    <svg
+                      focusable="false"
+                      preserveAspectRatio="xMidYMid meet"
+                      fill="currentColor"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="8" cy="3" r="1" />
+                      <circle cx="8" cy="8" r="1" />
+                      <circle cx="8" cy="13" r="1" />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!-- Repeat <tr> for each resource -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
